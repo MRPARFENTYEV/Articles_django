@@ -2,12 +2,14 @@ from django.shortcuts import render
 
 from .models import Article
 
+# with open('m2m-relations/articles.json','r','utf8')as file:
 
 def articles_list(request):
     template = 'articles/news.html'
     article_object = Article.objects.all()
     print(article_object)
     context = {'object_list': article_object}
+    # context ={}
 
 
     # используйте этот параметр для упорядочивания результатов
