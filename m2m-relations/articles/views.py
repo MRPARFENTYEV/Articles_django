@@ -1,13 +1,15 @@
 from django.shortcuts import render
 
-from .models import Article
+from .models import Article, Tag
 
 # with open('m2m-relations/articles.json','r','utf8')as file:
 
 def articles_list(request):
     template = 'articles/news.html'
     article_object = Article.objects.all()
+    tag = Tag.objects.all()
     print(article_object)
+    print(tag)
     context = {'object_list': article_object}
     # context ={}
 
@@ -17,3 +19,7 @@ def articles_list(request):
     ordering = '-published_at'
 
     return render(request, template, context)
+# def tags_list(request):
+#     tag = Tag.objects.all()
+#     print(tag)
+#     return render(request,'')
