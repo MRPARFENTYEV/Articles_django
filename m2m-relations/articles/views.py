@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Article, Tag
+from .models import Article, Tag, Scope
 
 # with open('m2m-relations/articles.json','r','utf8')as file:
 
@@ -8,9 +8,13 @@ def articles_list(request):
     template = 'articles/news.html'
     article_object = Article.objects.all()
     tag = Tag.objects.all()
-    print(article_object)
-    print(tag)
+    scope = Scope.objects.all()
+    print(scope)
+
+
+
     context = {'object_list': article_object}
+    # context = {'object_list': article_object}
     # context ={}
 
 

@@ -17,6 +17,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
 class RelationshipInline(admin.TabularInline):
     model = Scope
+    extra = 5
 
 
 @admin.register(Article)
